@@ -37,3 +37,5 @@ Estrutura:
 ---
 
 `Add-Migration InitialDB -Context TaskSystemDBContext`
+
+`Update-Database -Context TaskSystemDBContext`
