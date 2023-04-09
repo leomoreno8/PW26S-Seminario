@@ -11,12 +11,14 @@ Tecnologias:
 - Swagger (Documentação)
 - SqlServer
 
+---
 
 Models:
 
 - Users
 - Tasks
 
+---
 
 Estrutura:
 
@@ -30,3 +32,5 @@ Estrutura:
 - Models
   - TaskModel.cs
   - UserModel.cs
+
+---
