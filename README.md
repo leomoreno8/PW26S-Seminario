@@ -32,5 +32,6 @@ Estrutura:
 - Repositories
   - Interfaces
     - IUserRepository.cs
+  - UserRepository.cs
 
 ---
