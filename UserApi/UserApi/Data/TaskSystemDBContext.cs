@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using UserApi.Data.Map;
 using UserApi.Models;
 
 namespace UserApi.Data
@@ -11,6 +12,9 @@ namespace UserApi.Data
         public DbSet<TaskModel> Tasks { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
+            modelBuilder.ApplyConfiguration(new UserMap());
+            modelBuilder.ApplyConfiguration(new TaskMap());
+
             base.OnModelCreating(modelBuilder);
         }
     }
