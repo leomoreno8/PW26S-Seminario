@@ -1,3 +1,8 @@
+using Microsoft.EntityFrameworkCore;
+using UserApi.Data;
+using UserApi.Repositories;
+using UserApi.Repositories.Interfaces;
+
 namespace UserApi
 {
     public class Program
@@ -12,6 +17,14 @@ namespace UserApi
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddEntityFrameworkSqlServer()
+                .AddDbContext<TaskSystemDBContext>(
+                    options => options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase"))
+                );
+
+            // Dependency Injection
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
 
             var app = builder.Build();
 
