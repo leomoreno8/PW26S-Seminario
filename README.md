@@ -35,3 +35,5 @@ Estrutura:
   - UserRepository.cs
 
 ---
+
+`Add-Migration InitialDB -Context TaskSystemDBContext`
