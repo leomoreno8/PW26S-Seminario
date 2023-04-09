@@ -24,13 +24,13 @@ Estrutura:
 
 - Controllers
   - UserController.cs
-- Repositories
-  - Interfaces
-    - IUserRepository.cs
 - Data
   - TaskSystemDBContext.cs
 - Models
   - TaskModel.cs
   - UserModel.cs
+- Repositories
+  - Interfaces
+    - IUserRepository.cs
 
 ---
