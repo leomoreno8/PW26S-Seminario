@@ -11,8 +11,8 @@ namespace UserApi.Repositories
             _dbContext = taskSystemDBContext;
         }
         public async Task<UserModel> AddUser(UserModel user) {
-            _dbContext.Users.Add(user);
-            _dbContext.SaveChanges();
+            await _dbContext.Users.AddAsync(user);
+            await _dbContext.SaveChangesAsync();
 
             return user;
         }
@@ -26,7 +26,7 @@ namespace UserApi.Repositories
             }
 
             _dbContext.Users.Remove(userById);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
 
             return true;
         }
@@ -50,7 +50,7 @@ namespace UserApi.Repositories
             userById.Email = user.Email;
 
             _dbContext.Users.Update(userById);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
 
             return userById;
         }
