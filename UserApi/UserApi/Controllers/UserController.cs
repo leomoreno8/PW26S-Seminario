@@ -3,12 +3,15 @@ using Microsoft.AspNetCore.Mvc;
 using UserApi.Models;
 using UserApi.Repositories.Interfaces;
 
-namespace UserApi.Controllers {
+namespace UserApi.Controllers 
+{
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase {
+    public class UserController : ControllerBase 
+    {
         private readonly IUserRepository _userRepository;
-        public UserController(IUserRepository userRepository) {
+        public UserController(IUserRepository userRepository) 
+        {
             _userRepository = userRepository;
         }
 
@@ -30,6 +33,21 @@ namespace UserApi.Controllers {
         {
             UserModel user = await _userRepository.AddUser(userModel);
             return Ok(user);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<UserModel>> UpdateUser([FromBody] UserModel userModel, int id)
+        {
+            userModel.Id = id;
+            UserModel user = await _userRepository.UpdateUser(userModel, id);
+            return Ok(user);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<UserModel>> DeleteUser(int id)
+        {
+            bool deleted = await _userRepository.DeleteUser(id);
+            return Ok(deleted);
         }
     }
 }
