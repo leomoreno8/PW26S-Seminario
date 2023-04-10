@@ -43,3 +43,8 @@
 `Update-Database -Context TaskSystemDBContext`
 
 ---
+C# é uma linguagem de programação orientada a objetos e orientada a componentes. C# fornece construções de linguagem para dar suporte diretamente a esses conceitos, tornando C# uma linguagem natural para criação e uso de componentes de software.
+
+Várias aplicações
+
+Semelhante a Java
