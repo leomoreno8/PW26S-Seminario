@@ -4,7 +4,7 @@
 
 ---
 
-Tecnologias:
+**Tecnologias:**
 
 - ASP .NET
 - C#
@@ -13,14 +13,14 @@ Tecnologias:
 
 ---
 
-Models:
+**Models:**
 
 - Users
 - Tasks
 
 ---
 
-Estrutura:
+**Estrutura:**
 
 - Controllers
   - UserController.cs
@@ -36,6 +36,10 @@ Estrutura:
 
 ---
 
-`Add-Migration InitialDB -Context TaskSystemDBContext`
+**Migrations**
+
+` Add-Migration InitialDB -Context TaskSystemDBContext `
 
 `Update-Database -Context TaskSystemDBContext`
+
+---
