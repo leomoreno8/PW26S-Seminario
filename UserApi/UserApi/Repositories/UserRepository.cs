@@ -20,7 +20,7 @@ namespace UserApi.Repositories
         public async Task<bool> DeleteUser(int id) {
             UserModel userById = await SearchUserById(id);
 
-            if (userById != null)
+            if (userById == null)
             {
                 throw new Exception($"User ID: {id} not found");
             }
@@ -42,7 +42,7 @@ namespace UserApi.Repositories
         public async Task<UserModel> UpdateUser(UserModel user, int id) {
             UserModel userById =  await SearchUserById(id);
 
-            if (userById != null) {
+            if (userById == null) {
                 throw new Exception($"User ID: {id} not found");
             }
 
